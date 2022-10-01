@@ -1,8 +1,7 @@
 import React from "react";
-import ReactXnft, { Button, Stack, Tab, Text, useNavigation, View } from "react-xnft";
-import { TabTest } from "../components/tabTest";
-import { TabTest2 } from "../components/tabTest2";
-import { Test } from "../components/test";
+import ReactXnft, { Tab, Text } from "react-xnft";
+import { Page1 } from "../pages/page1";
+import { Page2 } from "../pages/page2";
 import { THEME } from "../utils/theme";
 
 //
@@ -14,100 +13,62 @@ ReactXnft.events.on("connect", () => {
 
 export function App() {
   return (
-    <>
-    {/* <Stack.Navigator
-      initialRoute={{ name: "grid" }}
-      options={({ route }) => {
-        switch (route.name) {
-          case "grid":
-            return {
-              title: "test1",
-            };
-          case "detail":
-            return {
-              title: "test2",
-            };
-          default:
-            throw new Error("unknown route");
-        }
-      }}
-      style={{}}
-    >
-      <Stack.Screen name={"grid"} component={(props: any) => <Test />} />
-      <Stack.Screen
-        name={"detail"}
-        component={(props: any) => (
-          <View>
-            <Button>test2</Button>
-          </View>
-        )}
-      />
-    </Stack.Navigator> */}
-
-
-
-
     <Tab.Navigator
-          options={({ route }) => {
-            return {
-              tabBarIcon: ({ focused }) => {
-                switch (route.name) {
-                  case "attributes":
-                    return (
-                      <Text
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: 500,
-                          textAlign: "left",
-                          color: THEME.colors.textSecondary,
-                        }}
-                      >
-                        Attributes
-                      </Text>
-                    );
-                  case "details":
-                    return (
-                      <Text
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: 500,
-                          textAlign: "left",
-                          color: THEME.colors.textSecondary,
-                        }}
-                      >
-                        Details
-                      </Text>
-                    );
-                  default:
-                    throw new Error("unknown route");
-                }
-              },
-              tabBarActiveTintColor: THEME.colors.text,
-              tabBarInactiveTintColor: THEME.colors.attributeBackground,
-            };
-          }}
-          style={{
-            height: "34px",
-            background: "transparent",
-            borderTop: "none",
-          }}
-          disableScroll
-          
-        >
-          <Tab.Screen
-            name="attributes"
-            disableLabel={true}
-            component={() => <TabTest />}
-          />
-          <Tab.Screen
-            name="details"
-            disableLabel={true}
-            component={() => <TabTest2 />}
-          />
-        </Tab.Navigator>
-
-
-
-    </>
+      options={({ route }) => {
+        return {
+          tabBarIcon: ({ focused }) => {
+            switch (route.name) {
+              case "page1":
+                return (
+                  <Text
+                    style={{
+                      fontSize: "16px",
+                      fontWeight: 500,
+                      textAlign: "left",
+                      color: THEME.colors.textSecondary,
+                    }}
+                  >
+                    Page 1
+                  </Text>
+                );
+              case "page2":
+                return (
+                  <Text
+                    style={{
+                      fontSize: "16px",
+                      fontWeight: 500,
+                      textAlign: "left",
+                      color: THEME.colors.textSecondary,
+                    }}
+                  >
+                    Page 2
+                  </Text>
+                );
+              default:
+                throw new Error("unknown route");
+            }
+          },
+          tabBarActiveTintColor: THEME.colors.text,
+          tabBarInactiveTintColor: THEME.colors.attributeBackground,
+        };
+      }}
+      style={{
+        height: "34px",
+        background: "transparent",
+        borderTop: "none",
+      }}
+      disableScroll
+    >
+      <Tab.Screen
+        name="page1"
+        disableLabel={true}
+        component={() => <Page1 />}
+      />
+      <Tab.Screen
+        name="page2"
+        disableLabel={true}
+        component={() => <Page2 />}
+      />
+    </Tab.Navigator>
   );
 }

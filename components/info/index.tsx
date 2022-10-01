@@ -1,16 +1,16 @@
 import React from "react";
 import { Button, useNavigation, View } from "react-xnft";
 
-export const Test = () => {
+export const Info = () => {
   const nav = useNavigation();
 
-  const clickGod = (god: any) => {
-    nav.push("detail", { god });
+  const onClickHandler = () => {
+    nav.push("moreInfo");
   };
 
   return (
     <View>
-      <Button onClick={clickGod}>test1</Button>
+      <Button onClick={onClickHandler}>Info</Button>
     </View>
   );
 };
