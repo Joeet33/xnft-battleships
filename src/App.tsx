@@ -1,8 +1,8 @@
 import React from "react";
 import ReactXnft, { Tab, Text } from "react-xnft";
-import { Page1 } from "../pages/page1";
-import { Page2 } from "../pages/page2";
-import { THEME } from "../utils/theme";
+import { Page1 } from "./pages/page1";
+import { Page2 } from "./pages/page2";
+import { THEME } from "./utils/theme";
 
 //
 // On connection to the host environment, warm the cache.
