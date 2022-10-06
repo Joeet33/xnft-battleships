@@ -27,5 +27,5 @@ yarn dev
 Now that you have your xNFT dev server running, open it in the Backpack simulator to see it run.
 
 That's it!
-# xnft-battleships
-# xnft-battleships
+# xnft-template
+# xnft-template
